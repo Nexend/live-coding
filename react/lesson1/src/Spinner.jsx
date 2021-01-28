@@ -3,7 +3,9 @@ import React from 'react';
 // input: (props): number
 // output: JSX
 const Spinner = ({ size }) => {
-  return <span className="spinner" style={{ height: size, width: size }}></span>;
+  const style = { height: size, width: size };
+
+  return <span className="spinner" style={style}></span>;
 };
 
 export default Spinner;
