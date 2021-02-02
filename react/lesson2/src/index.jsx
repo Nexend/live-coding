@@ -41,6 +41,21 @@ const users = [
     name: 'Sammi',
     age: 19,
   },
+  {
+    id: 8,
+    name: 'Sammi',
+    age: 19,
+  },
+  {
+    id: 9,
+    name: 'Sammi',
+    age: 19,
+  },
+  {
+    id: 10,
+    name: 'Sammi',
+    age: 19,
+  },
 ];
 
 ReactDOM.render(<UsersList users={users} />, rootElement);
