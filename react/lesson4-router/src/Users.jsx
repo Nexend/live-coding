@@ -1,13 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-
-import User from './User.jsx';
+import User from './User';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 const Users = ({ match }) => {
   return (
-    <Router>
-      <div className="page__content">
-        <h1>Users</h1>
+    <div className="page__content">
+      <h1>Users</h1>
+      <BrowserRouter>
         <ul className="navigation">
           <li className="navigation__item">
             <Link to={`${match.path}/github`}>Github</Link>
@@ -17,14 +16,13 @@ const Users = ({ match }) => {
           </li>
         </ul>
         <Switch>
-          <Route path={`${match.path}/:userId`} component={User} />
-          <Route exact path={`${match.path}`}>
+          <Route exact path={match.path}>
             <span>Select a user please</span>
           </Route>
+          <Route path={`${match.path}/:userId`} component={User} />
         </Switch>
-      </div>
-    </Router>
+      </BrowserRouter>
+    </div>
   );
 };
-
 export default Users;
